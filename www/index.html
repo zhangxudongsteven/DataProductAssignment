@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/shiny-singletons"></script>
+    <script type="application/html-dependencies">json2[2014.02.04];jquery[1.12.4];babel-polyfill[6.7.2];shiny[0.14.2];selectize[0.11.2];bootstrap[3.3.7]</script>
+    <script src="shared/json2-min.js"></script>
+    <script src="shared/jquery.min.js"></script>
+    <script src="shared/babel-polyfill.min.js"></script>
+    <link href="shared/shiny.css" rel="stylesheet" />
+    <script src="shared/shiny.min.js"></script>
+    <link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+<script src="shared/selectize/js/es5-shim.min.js"></script>
+<![endif]-->
+    <script src="shared/selectize/js/selectize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+    <script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+    <script src="shared/bootstrap/shim/respond.min.js"></script>
+    <title>Human Resource Dashboard</title>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <span class="navbar-brand">Human Resource Dashboard</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#tab-1402-1" data-toggle="tab" data-value="Synopsis">Synopsis</a>
+                </li>
+                <li>
+                    <a href="#tab-1402-2" data-toggle="tab" data-value="Analysis">Analysis</a>
+                </li>
+                <li>
+                    <a href="#tab-1402-3" data-toggle="tab" data-value="Data Generating Process">Data Generating Process</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="tab-content">
+            <div class="tab-pane active" data-value="Synopsis" id="tab-1402-1">
+                <h3>Human Resource Dashboard Demo</h3>
+                <hr/>
+                <h4>Introduction</h4>
+                <span class="help-block">This data was made up by a data analyst, in order to use in a HTML5 Dashboard Building.</span>
+                <span class="help-block">During the building, the data will follow the following 7 basic principles</span>
+                <span class="help-block"> - Use a normal distribution with a gradual increase trend to make up data. </span>
+                <span class="help-block"> - Generally, each year will have 7% increasement. </span>
+                <span class="help-block"> - The standard deviation will be one-tenth the mean. </span>
+                <span class="help-block"> - The 6 departments are named A to F, and their member are 100 to 600. </span>
+                <span class="help-block"> - For a larger department, their figures will be lower. To be specific, with 100 more members, there will be 0.5% drop in all figures, which based on 100 members with 100% ratio. </span>
+                <span class="help-block"> - For each month, there will be a standerd fluctuation. </span>
+                <span class="help-block"> - The final figure should be influenced by a random ratio, which follow a N~(1,0.07) distribution.</span>
+                <h4>Data Description</h4>
+                <p>A data frame with 648 observations on 4 dimensions and 6 measures</p>
+                <p> [, 1] year Year (2008 - 2016)</p>
+                <p> [, 2] quarter Quarter (Q1, Q2, Q3, Q4)</p>
+                <p> [, 3] month Month (1 - 12)</p>
+                <p> [, 4] department 6 Department (A - F)</p>
+                <p> [, 5] CapitaIncome Total Amount of Capita Income</p>
+                <p> [, 6] Profitability Total Amount of Profit</p>
+                <p> [, 7] NetProfit Total Amount of Net Profit</p>
+                <p> [, 8] LaborCost Total Amount of Labor Cost</p>
+                <p> [, 9] LaborCostProfitRatio Average of Labor Cost</p>
+                <p> [,10] ReturnOnHumanCapital Average Return on Human Capital</p>
+                <hr/>
+                <h4> - December 9, 2016</h4>
+            </div>
+            <div class="tab-pane" data-value="Analysis" id="tab-1402-2">
+                <h3>Time Serise Analysis</h3>
+                <hr/>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <form class="well">
+                                <div class="form-group shiny-input-container">
+                                    <label class="control-label" for="measure">Measure:</label>
+                                    <div>
+                                        <select id="measure">
+                                            <option value="CapitaIncome" selected>Total Amount of Capita Income</option>
+                                            <option value="Profitability">Total Amount of Profit</option>
+                                            <option value="NetProfit">Total Amount of Net Profit</option>
+                                            <option value="LaborCost">Total Amount of Labor Cost</option>
+                                            <option value="LaborCostProfitRatio">Average of Labor Cost</option>
+                                            <option value="ReturnOnHumanCapital">Average Return on Human Capital</option>
+                                        </select>
+                                        <script type="application/json" data-for="measure" data-nonempty="">{}</script>
+                                    </div>
+                                </div>
+                                <div class="form-group shiny-input-container">
+                                    <label class="control-label" for="department">Department:</label>
+                                    <div>
+                                        <select id="department">
+                                            <option value="A" selected>Department A</option>
+                                            <option value="B">Department B</option>
+                                            <option value="C">Department C</option>
+                                            <option value="D">Department D</option>
+                                            <option value="E">Department E</option>
+                                            <option value="F">Department F</option>
+                                        </select>
+                                        <script type="application/json" data-for="department" data-nonempty="">{}</script>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>Diagram</h4>
+                            <hr/>
+                            <div class="tabbable">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#tab-2312-1" data-toggle="tab" data-value="Forecast Plot">Forecast Plot</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-2312-2" data-toggle="tab" data-value="Decompose of Time Series">Decompose of Time Series</a>
+                                    </li>
+                                    <li>
+                                        <a href="#tab-2312-3" data-toggle="tab" data-value="Corresponding Data">Corresponding Data</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" data-value="Forecast Plot" id="tab-2312-1">
+                                        <div id="forecastPlot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                                    </div>
+                                    <div class="tab-pane" data-value="Decompose of Time Series" id="tab-2312-2">
+                                        <div id="decomposePlot" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>
+                                    </div>
+                                    <div class="tab-pane" data-value="Corresponding Data" id="tab-2312-3">
+                                        <div id="dataTable" class="shiny-html-output"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" data-value="Data Generating Process" id="tab-1402-3">
+                <iframe src="data_generating.html" width="100%" height="600" frameborder="0" seamless></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
